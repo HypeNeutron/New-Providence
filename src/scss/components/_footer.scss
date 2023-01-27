@@ -1,0 +1,81 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+
+footer {
+  width: 100vw;
+  padding: 50px 0;
+  @media screen and (min-width: 825px) {
+    padding: 0 15px;
+    padding-top: 100px;
+  }
+}
+
+.footer {
+  width: min(90vw, 1400px);
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0 auto;
+  justify-content: space-around;
+
+  &__left {
+    width: 292px;
+    margin-bottom: 9em;
+
+    img {
+      margin-bottom: 3.5em;
+    }
+
+    p {
+      color: var.$clr-para-gray;
+      font-size: 1.4rem;
+      line-height: 1.8;
+      margin-bottom: 1em;
+    }
+
+    ul {
+      @include mix.layoutIcons;
+
+      color: #b8b8b8;
+    }
+    i:hover {
+      color: var.$clr-blackMain;
+    }
+  }
+
+  &__right {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 450px;
+
+    p {
+      padding: 0;
+      line-height: 0;
+      color: black;
+      margin-bottom: 2em;
+    }
+
+    ul {
+      padding: 0 15px;
+      margin: 0;
+      margin-bottom: 2em;
+      font-size: 1.6rem;
+    }
+
+    li {
+      line-height: 2.5;
+      &:not(p) {
+        color: var.$clr-para-gray;
+      }
+      &:not(p):hover {
+        color: var.$clr-blackMain;
+      }
+    }
+
+    li > p,
+    ul {
+      text-align: left;
+    }
+  }
+}

@@ -1,0 +1,102 @@
+@use "../abstracts/variables" as var;
+
+#phone-feature {
+  min-height: 64vh;
+  width: 100vw;
+}
+
+.phone-feature {
+  &__container {
+    margin: 0 6%;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  &__imgContainer {
+    padding-top: 90px;
+    img {
+      object-fit: scale-down;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &__detailer {
+    padding-left: 0;
+    h2 {
+      color: inherit;
+      line-height: 1;
+      font-weight: 400;
+    }
+    p {
+      width: 100%;
+      padding-top: 6rem;
+      color: var.$clr-para-gray;
+      font-size: 2rem;
+      font-weight: 400;
+    }
+  }
+
+  &__btn-container {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1em;
+    padding-top: 70px;
+    .btn--long {
+      border: var.$border-light;
+      border-radius: 25px;
+      padding: 8px 20px;
+      color: white;
+      font-size: 1.6rem;
+      background: var.$clr-primary;
+      i {
+        padding-left: 40px;
+        color: white;
+      }
+    }
+
+    .btn--transparent {
+      border: var.$border-light;
+      font-size: 1.6rem;
+      margin-left: 3%;
+      padding: 8px 17px;
+      color: var.$clr-blackMain;
+    }
+  }
+
+  @media screen and (min-width: 1000px) {
+    &__container {
+      margin: 0 3%;
+      padding-top: 90px;
+      flex-direction: row;
+    }
+
+    &__detailer {
+      padding-left: 100px;
+      flex-basis: 50%;
+      p {
+        width: 500px;
+      }
+      h2 {
+        padding-top: 100px;
+      }
+    }
+
+    &__imgContainer {
+      padding-top: 57px;
+      flex-basis: 50%;
+    }
+  }
+
+  @media screen and (min-width: 1400px) {
+    &__imgContainer {
+      padding-top: 0;
+      flex-basis: 50%;
+    }
+
+    &__detailer {
+      padding-left: 100px;
+      flex-basis: 50%;
+    }
+  }
+}

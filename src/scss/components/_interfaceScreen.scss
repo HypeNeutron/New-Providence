@@ -1,0 +1,124 @@
+@use "../abstracts/variables" as var;
+
+#interface-screen {
+  background: var.$clr-bg-gray;
+  width: 100vw;
+  margin: 0 auto;
+  padding-top: 140px;
+}
+
+.interface-screen {
+  &__heading {
+    h2 {
+      text-align: center;
+      line-height: 1.3;
+      padding: 0 0.4em;
+      font-weight: 400;
+    }
+    hr {
+      width: 50px;
+      height: 2px;
+      border: none;
+      margin: 40px auto;
+      background-color: var.$clr-primary;
+    }
+  }
+
+  &__heading &__screenText {
+    text-align: center;
+    color: var.$clr-para-gray;
+    font-weight: bold;
+    padding: 10px 0;
+    letter-spacing: 1.2px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+  }
+
+  &__container {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    ul {
+      position: relative;
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      padding-left: 0;
+      height: 800px;
+    }
+    li {
+      position: absolute;
+    }
+  }
+
+  &__active {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  &__last {
+    opacity: 0;
+    transform: translateX(-155%);
+  }
+
+  &__next {
+    opacity: 0;
+    transform: translateX(155%);
+  }
+
+  @media screen and (min-width: 712px) {
+    &__container {
+      margin: 0 3%;
+
+      ul {
+        position: initial;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+        height: auto;
+        gap: 10px;
+        padding-left: 0;
+      }
+
+      li {
+        position: initial;
+        width: auto;
+        z-index: 1;
+        transform: scale(1);
+        transition: all 1.2s cubic-bezier(0.38, 0.99, 0.99, 0.9);
+
+        img:not([alt="main-img"]) {
+          box-shadow: var.$img-sd-l;
+        }
+
+        img:hover:not([alt="main-img"]) {
+          box-shadow: var.$img-sd-d;
+        }
+      }
+
+      li:hover {
+        cursor: pointer;
+        transition: all 1.2s cubic-bezier(0.38, 0.99, 0.99, 0.9);
+        transform: scale(1.09);
+        z-index: 2;
+      }
+    }
+
+    &__active {
+      opacity: 1;
+      transform: initial;
+    }
+
+    &__last {
+      opacity: 1;
+      transform: initial;
+    }
+
+    &__next {
+      opacity: 1;
+      transform: initial;
+    }
+  }
+}

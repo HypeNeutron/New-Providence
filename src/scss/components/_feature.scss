@@ -1,0 +1,64 @@
+@use "../abstracts/variables" as var;
+
+#feature {
+  width: 100vw;
+  padding: 150px 0;
+}
+
+.feature {
+  &__container {
+    width: min(1000px, 90vw);
+    margin: 0 auto;
+    // padding-bottom: 120px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__iconFeature {
+    height: 90px;
+    img {
+      filter: invert(34%) sepia(100%) saturate(2053%) hue-rotate(203deg)
+        brightness(102%) contrast(91%);
+      width: 42px;
+    }
+  }
+
+  &__paragraph {
+    font-size: 1.8rem;
+    padding: 1em;
+    &--1 {
+      padding-right: 0;
+      padding-bottom: 7.5em;
+    }
+    @media screen and (min-width: 498px) {
+      padding-bottom: 3.5em;
+    }
+  }
+  @media screen and (min-width: 1000px) {
+    &__paragraph {
+      &--1 {
+        padding-right: 4.5em;
+        padding-bottom: 0;
+      }
+      &--2 {
+        padding-left: 4.5em;
+      }
+    }
+
+    &__container {
+      flex-direction: row;
+    }
+  }
+
+  &__heading {
+    height: 60px;
+    font-size: 2.5rem;
+    font-family: inherit;
+    font-weight: 300;
+  }
+
+  &__description {
+    height: 100px;
+    color: var.$clr-para-gray;
+  }
+}

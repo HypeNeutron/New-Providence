@@ -1,0 +1,52 @@
+@use "../abstracts/mixins" as mix;
+@use "../abstracts/variables" as var;
+
+#newsLetter {
+  padding: 10em 0 4em;
+  width: 100vw;
+  min-height: 40vh;
+}
+
+.newsLetter {
+  text-align: center;
+  width: min(90vw, 900px);
+  margin: 0 auto;
+
+  h2 {
+    margin-bottom: 1em;
+  }
+
+  &__form {
+    @include mix.inputForm;
+    padding: 17px 0;
+  }
+
+  @media screen and (min-width: 711px) {
+    h2 {
+      margin-bottom: 64px;
+    }
+
+    &__form {
+      display: inline;
+      padding: 66px 0;
+
+      a.btn--green {
+        position: absolute;
+        top: 49px;
+        right: 4px;
+        i {
+          margin-left: 1em;
+        }
+      }
+      input {
+        width: min(80vw, 480px);
+      }
+    }
+  }
+
+  p {
+    color: var.$clr-para-gray;
+    font-size: 1.4rem;
+    margin-top: 1em;
+  }
+}

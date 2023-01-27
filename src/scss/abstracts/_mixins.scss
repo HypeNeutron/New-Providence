@@ -1,0 +1,46 @@
+@use "./variables" as var;
+
+@mixin layoutIcons {
+  width: 75%;
+  font-size: 1.6rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+}
+
+@mixin inputForm {
+  position: relative;
+  padding: 66px 0;
+  margin: 0 auto;
+  display: grid;
+  justify-items: center;
+  row-gap: 25px;
+
+  a.btn--green {
+    font-size: 1.6rem;
+    padding: 9px 0;
+    background-color: var.$clr-lightgreen;
+    width: 150px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    i {
+      font-size: 1.4rem;
+      margin-left: 2em;
+    }
+  }
+
+  input {
+    width: min(80vw, 502px);
+    font-size: 1.6rem;
+    height: 50px;
+    max-width: 100%;
+    border: 1px solid rgba(38, 39, 45, 0.2);
+    padding: 16px 26px;
+    padding-right: 148px;
+    background-color: transparent;
+    border-radius: 30px;
+  }
+}

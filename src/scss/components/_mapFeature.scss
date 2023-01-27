@@ -1,0 +1,102 @@
+@use "../abstracts/variables" as var;
+
+#map-feature {
+  width: 100%;
+  min-height: 500px;
+  padding: 120px 0;
+  @media screen and (min-width: 1000px) {
+    padding: 110px 0 190px;
+  }
+}
+
+.map-feature {
+  &__container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__partner {
+    margin: 0 6%;
+
+    @media screen and (min-width: 1000px) {
+      margin: 0;
+    }
+
+    flex: 50%;
+    h2 {
+      line-height: 1;
+      font-weight: 400;
+    }
+    p {
+      padding-top: 5.5rem;
+      font-size: 1.8rem;
+      color: var.$clr-para-gray;
+    }
+  }
+
+  &__partnerText {
+    font-weight: bold;
+    letter-spacing: 1.2px;
+    font-size: 1.2rem;
+    margin-top: 25px;
+    padding: 10px 0;
+    text-transform: uppercase;
+  }
+
+  &__banner {
+    display: flex;
+    margin-top: 15px;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    width: 50%;
+    a {
+      margin-top: 10px;
+    }
+  }
+
+  &__map {
+    margin: 0 6%;
+    margin-top: 100px;
+
+    img {
+      vertical-align: middle;
+      object-fit: fill;
+    }
+  }
+
+  @media screen and (min-width: 1000px) {
+    &__container {
+      flex-direction: row;
+    }
+
+    &__partner {
+      padding-left: 10%;
+      p {
+        width: 400px;
+      }
+    }
+
+    &__map {
+      position: absolute;
+      margin: 0;
+      left: -8%;
+      right: -53%;
+      padding-left: 59%;
+      img {
+        vertical-align: middle;
+        object-fit: none;
+      }
+    }
+
+    &__banner {
+      width: 300px;
+    }
+  }
+
+  @media screen and (min-width: 1600px) {
+    &__partner {
+      padding-left: 20%;
+    }
+  }
+}

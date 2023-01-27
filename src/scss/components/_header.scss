@@ -1,0 +1,60 @@
+@use "../abstracts/variables" as var;
+
+#header {
+  min-height: 95vh;
+  width: 100vw;
+  background: url(../assets/images/headerBackground.jpg) no-repeat center;
+  background-size: cover;
+  padding: 220px 0 540px;
+  position: relative;
+  overflow: hidden;
+}
+
+.header {
+  &__content {
+    text-align: center;
+    width: min(800px, 90vw);
+    margin: 0 auto;
+
+    h1 {
+      font-size: 6rem;
+      font-weight: 400;
+      text-align: center;
+    }
+
+    p {
+      color: var.$clr-para-gray;
+      font-size: 2rem;
+      margin-bottom: 60px;
+    }
+
+    .btn--video {
+      color: inherit;
+      font-size: 1.6rem;
+      border: var.$border-light;
+      border-radius: 25px;
+      padding: 15px 45px;
+    }
+
+    .btn--video i {
+      font-size: 1.4rem;
+      margin-right: 15px;
+    }
+  }
+
+  &__iphoneHeader {
+    width: 300px;
+    position: absolute;
+    top: 57%;
+    left: 50%;
+    margin-left: -154px;
+    transform: translate(-50%, -50%);
+
+    @media screen and (min-width: 414px) {
+      top: 56%;
+      left: 50%;
+      margin-left: -180px;
+      width: 366px;
+    }
+  }
+}
